@@ -3,7 +3,7 @@ pipeline {
         stages {
            stage ('checkout'){
                  steps {
-                 node('agent && agent1'){
+                 node('agent,agent1'){
                        checkout scm 
                        }
                       }
