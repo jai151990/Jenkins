@@ -1,9 +1,12 @@
 pipeline {
-   node('agent && agent1')
+   agent none
         stages {
            stage ('checkout'){
                  steps {
-                       checkout scm }
+                 node('agent && agent1'){
+                       checkout scm 
+                       }
+                      }
                   }
              stage ('build'){
                   steps {
